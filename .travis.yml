@@ -8,8 +8,8 @@ go:
 install:
   - cd $HOME
   - find . -type d
-  - rm -rf $HOME/gopath/src/github.com/onsi/ginkgo
-  - mv $HOME/gopath/src/github.com/{benmoss,onsi}/ginkgo
+  - mkdir -p gopath/src/github.com/onsi
+  - mv gopath/src/github.com/{benmoss,onsi}
   - cd $HOME/gopath/src/github.com/onsi/ginkgo
   - go get -v -t ./...
   - go get golang.org/x/tools/cmd/cover
