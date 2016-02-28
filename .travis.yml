@@ -6,12 +6,14 @@ go:
   - tip
 
 install:
+  - cd $HOME
+  - rm -rf $HOME/gopath/src/github.com/onsi/ginkgo
+  - mv $HOME/gopath/src/github.com/{benmoss,onsi}/ginkgo
+  - cd $HOME/gopath/src/github.com/onsi/ginkgo
   - go get -v -t ./...
   - go get golang.org/x/tools/cmd/cover
   - go get github.com/onsi/gomega
   - go install github.com/onsi/ginkgo/ginkgo
   - export PATH=$PATH:$HOME/gopath/bin
-  - rm -rf $HOME/gopath/src/github.com/onsi/ginkgo
-  - mv $HOME/gopath/src/github.com/{benmoss,onsi}/ginkgo
 
 script: $HOME/gopath/bin/ginkgo -r --randomizeAllSpecs --randomizeSuites --race --trace
