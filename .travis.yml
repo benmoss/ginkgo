@@ -10,7 +10,8 @@ install:
   - find . -type d
   - mkdir -p gopath/src/github.com/onsi
   - mv gopath/src/github.com/{benmoss,onsi}
-  - cd $HOME/gopath/src/github.com/onsi/ginkgo
+  - find . -type d
+  - cd gopath/src/github.com/onsi/ginkgo
   - go get -v -t ./...
   - go get golang.org/x/tools/cmd/cover
   - go get github.com/onsi/gomega
